@@ -14,12 +14,6 @@
       "homepage": "https://github.com/michaelcontento"
     }
   ],
-  "repositories": [
-    {
-      "type": "vcs",
-      "url": "https://github.com/xiabin/jobby"
-    }
-  ],
   "require": {
     "php": ">=5.4",
     "mtdowling/cron-expression": "^1.0",
