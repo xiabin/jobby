@@ -160,8 +160,12 @@ class Jobby
     protected function runUnix($job, array $config)
     {
         $command = $this->getExecutableCommand($job, $config);
-        $binary = $this->getPhpBinary();
+        if (isset($config['phpBinary'])) {
+            $binary = $config['phpBinary'];
+        } else {
+            $binary = $this->getPhpBinary();
 
+        }
         $output = $config['debug'] ? 'debug.log' : '/dev/null';
         exec("$binary $command 1> $output 2>&1 &");
     }
